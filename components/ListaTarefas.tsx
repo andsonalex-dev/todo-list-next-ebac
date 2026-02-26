@@ -13,7 +13,10 @@ interface ListaTarefasProps {
   onTarefasAtualizadas?: () => void;
 }
 
-export default function ListaTarefas({ refresh = 0, onTarefasAtualizadas }: ListaTarefasProps) {
+export default function ListaTarefas({
+  refresh = 0,
+  onTarefasAtualizadas,
+}: ListaTarefasProps) {
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
@@ -97,9 +100,7 @@ export default function ListaTarefas({ refresh = 0, onTarefasAtualizadas }: List
             <input
               type="checkbox"
               checked={tarefa.concluida}
-              onChange={() =>
-                handleToggleTarefa(tarefa.id, tarefa.concluida)
-              }
+              onChange={() => handleToggleTarefa(tarefa.id, tarefa.concluida)}
               className="w-5 h-5 rounded cursor-pointer"
             />
             <span

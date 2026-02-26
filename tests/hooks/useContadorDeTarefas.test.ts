@@ -33,8 +33,7 @@ describe("useContadorDeTarefas", () => {
     const { result } = renderHook(() => useContadorDeTarefas());
 
     expect(result.current.contador.total).toBe(
-      result.current.contador.concluidas +
-        result.current.contador.pendentes
+      result.current.contador.concluidas + result.current.contador.pendentes,
     );
   });
 });

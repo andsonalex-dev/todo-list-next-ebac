@@ -42,7 +42,10 @@ export default function Home() {
           <h2 className="text-lg font-semibold mb-4 text-black dark:text-white">
             Minhas Tarefas
           </h2>
-          <ListaTarefas refresh={refresh} onTarefasAtualizadas={handleTarefaAdicionada} />
+          <ListaTarefas
+            refresh={refresh}
+            onTarefasAtualizadas={handleTarefaAdicionada}
+          />
         </div>
       </main>
     </div>

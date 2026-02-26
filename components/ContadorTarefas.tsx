@@ -37,5 +37,3 @@ export default function ContadorTarefas({ refresh = 0 }: ContadorTarefasProps) {
     </div>
   );
 }
-
-

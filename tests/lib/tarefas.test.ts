@@ -3,7 +3,7 @@ import {
   adicionarTarefa,
   atualizarTarefa,
   deletarTarefa,
-  getContadorTarefas
+  getContadorTarefas,
 } from "@/lib/tarefas";
 
 describe("lib/tarefas", () => {
@@ -40,9 +40,7 @@ describe("lib/tarefas", () => {
       await adicionarTarefa(tituloNova);
 
       const tarefas = await getTarefas();
-      const tarefaEncontrada = tarefas.find(
-        (t) => t.titulo === tituloNova
-      );
+      const tarefaEncontrada = tarefas.find((t) => t.titulo === tituloNova);
       expect(tarefaEncontrada).toBeDefined();
     });
   });
@@ -52,10 +50,7 @@ describe("lib/tarefas", () => {
       const tarefas = await getTarefas();
       const primeiraTarefa = tarefas[0];
 
-      const tarefaAtualizada = await atualizarTarefa(
-        primeiraTarefa.id,
-        true
-      );
+      const tarefaAtualizada = await atualizarTarefa(primeiraTarefa.id, true);
       expect(tarefaAtualizada?.concluida).toBe(true);
     });
 
@@ -74,9 +69,7 @@ describe("lib/tarefas", () => {
       expect(resultadoDelecao).toBe(true);
 
       const tarefas = await getTarefas();
-      const tarefaEncontrada = tarefas.find(
-        (t) => t.id === tarefaCriada.id
-      );
+      const tarefaEncontrada = tarefas.find((t) => t.id === tarefaCriada.id);
       expect(tarefaEncontrada).toBeUndefined();
     });
 
@@ -97,9 +90,7 @@ describe("lib/tarefas", () => {
 
     it("total deve ser soma de concluidas e pendentes", () => {
       const contador = getContadorTarefas();
-      expect(contador.total).toBe(
-        contador.concluidas + contador.pendentes
-      );
+      expect(contador.total).toBe(contador.concluidas + contador.pendentes);
     });
 
     it("total deve ser maior que zero", () => {

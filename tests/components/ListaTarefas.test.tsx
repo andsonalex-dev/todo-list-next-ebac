@@ -7,7 +7,9 @@ describe("ListaTarefas", () => {
     render(<ListaTarefas />);
 
     await waitFor(() => {
-      expect(screen.queryByText("Carregando tarefas...")).not.toBeInTheDocument();
+      expect(
+        screen.queryByText("Carregando tarefas..."),
+      ).not.toBeInTheDocument();
     });
   });
 
@@ -47,7 +49,7 @@ describe("ListaTarefas", () => {
 
     await waitFor(() => {
       expect(
-        screen.queryByText("Carregando tarefas...")
+        screen.queryByText("Carregando tarefas..."),
       ).not.toBeInTheDocument();
     });
   });
@@ -74,7 +76,7 @@ describe("ListaTarefas", () => {
 
     await waitFor(() => {
       expect(
-        screen.queryByText("Carregando tarefas...")
+        screen.queryByText("Carregando tarefas..."),
       ).not.toBeInTheDocument();
     });
 
@@ -82,7 +84,7 @@ describe("ListaTarefas", () => {
 
     await waitFor(() => {
       expect(
-        screen.queryByText("Carregando tarefas...")
+        screen.queryByText("Carregando tarefas..."),
       ).not.toBeInTheDocument();
     });
   });

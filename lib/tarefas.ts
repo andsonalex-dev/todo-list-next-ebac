@@ -60,7 +60,7 @@ export async function adicionarTarefa(titulo: string): Promise<Tarefa> {
 // Simula atualizar o status de uma tarefa
 export async function atualizarTarefa(
   id: number,
-  concluida: boolean
+  concluida: boolean,
 ): Promise<Tarefa | null> {
   return new Promise((resolve) => {
     setTimeout(() => {

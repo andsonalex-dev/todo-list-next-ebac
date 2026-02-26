@@ -31,12 +31,14 @@ Um aplicativo de gerenciamento de tarefas (todo-list) desenvolvido com **Next.js
 ### Instalação
 
 1. Clone o repositório:
+
 ```bash
 git clone https://github.com/andsonalex-dev/todo-list-next-ebac.git
 cd todo-list-next
 ```
 
 2. Instale as dependências:
+
 ```bash
 npm install
 ```
@@ -54,16 +56,19 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver a 
 ### Testes
 
 Executar todos os testes:
+
 ```bash
 npm test
 ```
 
 Modo de observação (watch mode):
+
 ```bash
 npm run test:watch
 ```
 
 Com cobertura de testes:
+
 ```bash
 npm run test:coverage
 ```

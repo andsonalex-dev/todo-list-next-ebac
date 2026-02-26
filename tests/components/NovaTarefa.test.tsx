@@ -20,7 +20,7 @@ describe("NovaTarefa", () => {
     fireEvent.click(botao);
 
     const mensagemErro = await screen.findByText(
-      /por favor, digite qual é a tarefa/i
+      /por favor, digite qual é a tarefa/i,
     );
     expect(mensagemErro).toBeInTheDocument();
   });
@@ -29,7 +29,7 @@ describe("NovaTarefa", () => {
     render(<NovaTarefa />);
 
     const input = screen.getByPlaceholderText(
-      "Digite uma nova tarefa..."
+      "Digite uma nova tarefa...",
     ) as HTMLInputElement;
     const botao = screen.getByRole("button", { name: /adicion/i });
 
@@ -45,9 +45,7 @@ describe("NovaTarefa", () => {
     const mockCallback = jest.fn();
     render(<NovaTarefa onTarefaAdicionada={mockCallback} />);
 
-    const input = screen.getByPlaceholderText(
-      "Digite uma nova tarefa..."
-    );
+    const input = screen.getByPlaceholderText("Digite uma nova tarefa...");
     const botao = screen.getByRole("button", { name: /adicion/i });
 
     fireEvent.change(input, { target: { value: "Tarefa teste" } });
@@ -61,9 +59,7 @@ describe("NovaTarefa", () => {
   it("deve desabilitar o botão enquanto carrega", async () => {
     render(<NovaTarefa />);
 
-    const input = screen.getByPlaceholderText(
-      "Digite uma nova tarefa..."
-    );
+    const input = screen.getByPlaceholderText("Digite uma nova tarefa...");
     const botao = screen.getByRole("button", { name: /adicion/i });
 
     fireEvent.change(input, { target: { value: "Tarefa teste" } });
