@@ -3,8 +3,7 @@ import {
   adicionarTarefa,
   atualizarTarefa,
   deletarTarefa,
-  getContadorTarefas,
-  Tarefa,
+  getContadorTarefas
 } from "@/lib/tarefas";
 
 describe("lib/tarefas", () => {

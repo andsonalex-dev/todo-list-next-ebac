@@ -1,5 +1,5 @@
 // Simulando um banco de dados local com array
-let tarefas: Array<{
+const tarefas: Array<{
   id: number;
   titulo: string;
   concluida: boolean;
