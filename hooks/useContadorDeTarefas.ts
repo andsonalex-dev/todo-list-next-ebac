@@ -20,6 +20,7 @@ export function useContadorDeTarefas() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     atualizar();
   }, [atualizar]);
 

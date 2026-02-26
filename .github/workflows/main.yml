@@ -33,6 +33,25 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  lints:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - name: Intal Node JS
+        uses: actions/setup-node@v5
+        with:
+          node-version: '25'
+          cache: "npm"
+          cache-dependecy-path: packege-lock.json
+      - name: Instalação das depêndencias
+        run: npm install     
+      - name: Rodar lint
+        run: npm run lint
+      - name: Verificar formtação
+        run: npm run format -- -- check
   tests:
    runs-on: ubuntu-latest
    needs: build
@@ -48,10 +67,6 @@ jobs:
           cache-dependecy-path: packege-lock.json
      - name: Instalação das depêndencias
        run: npm install     
-     - name: Rodar lint
-       run: npm run lint
-     - name: Verificar formtação
-       run: npm run format -- -- check
-     - name: Rodas testes
+     - name: Rodar testes
        run: npm run test
    
